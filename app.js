@@ -3,7 +3,7 @@ const exphbs = require("express-handlebars");
 const port = 3000;
 const app = express();
 const bodyParser = require("body-parser");
-const generate = require("./rubbish_generator.js/index.js");
+const generate = require("./rubbish_generator.js");
 
 app.use(bodyParser.urlencoded((extend = true)));
 
