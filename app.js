@@ -17,16 +17,16 @@ app.get("/", (req, res) => {
 });
 //catch  post
 app.post("/", (req, res) => {
-  const career = req.body;
-  const words = generate(career);
+  const option = req.body;
+  const words = generate(option);
   const careerResult = {
     engineer: false,
     designer: false,
     entrepreneur: false
   };
-  if (career.option == "engineer") careerResult.engineer = true;
-  else if (career.option == "designer") careerResult.designer = true;
-  else if (career.option == "entrepreneur") careerResult.entrepreneur = true;
+  if (option.target == "engineer") careerResult.engineer = true;
+  else if (option.target == "designer") careerResult.designer = true;
+  else if (option.target == "entrepreneur") careerResult.entrepreneur = true;
   res.render("index", {
     words: words,
     careerResult: careerResult

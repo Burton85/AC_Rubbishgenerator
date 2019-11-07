@@ -1,4 +1,4 @@
-function generate(career) {
+function generate(option) {
   const task = {
     engineer: ["加個按鈕", "加新功能", "切個版", "改一點 code"],
     designer: ["畫一張圖", "改個 logo", "順便幫忙設計一下", "隨便換個設計"],
@@ -15,15 +15,15 @@ function generate(career) {
     return index;
   }
   let words = "身為一個";
-  if (career.option == "engineer") {
+  if (option.target == "engineer") {
     words += "工程師，";
     words += task.engineer[randomMaker(task.engineer.length)];
     words += phrase[randomMaker(phrase.length)];
-  } else if (career.option == "designer") {
+  } else if (option.target == "designer") {
     words += "設計師，";
     words += task.designer[randomMaker(task.designer.length)];
     words += phrase[randomMaker(phrase.length)];
-  } else if (career.option == "entrepreneur") {
+  } else if (option.target == "entrepreneur") {
     words += "創業家，";
     words += task.entrepreneur[randomMaker(task.entrepreneur.length)];
     words += phrase[randomMaker(phrase.length)];
