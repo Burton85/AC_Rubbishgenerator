@@ -1,0 +1,101 @@
+<style>
+  .imgCut {
+    height: 50vh;
+    width: 50vh;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .imgMove {
+    height: 100%;
+    padding: 0;
+    margin-left: -50px;
+  }
+
+  .result {
+    height: 20vh;
+    width: 100%;
+    color: salmon;
+    font-size: 4vh;
+    overflow: hidden;
+  }
+
+  .slashes {
+    height: 3vh;
+    position: absolute;
+    right: 25px;
+    bottom: 8px;
+
+  }
+</style>
+<div class="container-fluid" style="padding:0;height:100%">
+  {{!-- navbar --}}
+  <nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1 font-weight-bold">幹話生產器</span>
+  </nav>
+  {{!-- title --}}
+  <div class="d-inline text-center">
+    <h1 class="font-weight-500" style="margin:50px 0 ;">你想對誰說幹話?</h1>
+  </div>
+  {{!-- choose a career--}}
+  <form action="/" method="Post">
+    <div class=" row d-flex justify-content-around align-content-center">
+      <div class="col-sm-12 col-md-3">
+        <div class="imgCut">
+          <img class="imgMove"
+            src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg" alt="engineer">
+        </div>
+        {{!-- radio --}}
+        <div class="form-check text-center">
+          <input class="form-check-input" type="radio" name="option" id="gridRadios1" value="engineer"
+            {{#if careerResult.engineer}}checked{{/if}}>
+          <label class="form-check-label" for="gridRadios1">
+            工程師
+          </label>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-3">
+        <div class="imgCut">
+          <img class="imgMove"
+            src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg" alt="designer">
+        </div>
+
+        <div class="form-check  text-center">
+          <input class="form-check-input" type="radio" name="option" id="gridRadios2" value="designer"
+            {{#if careerResult.designer}}checked{{/if}}>
+          <label class="form-check-label" for="gridRadios2">
+            設計師
+          </label>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-3">
+        <div class="imgCut">
+          <img class="imgMove"
+            src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg"
+            alt=" entrepreneur">
+        </div>
+        <div class="form-check  text-center">
+          <input class="form-check-input" type="radio" name="option" id="gridRadios3" value="entrepreneur"
+            {{#if careerResult.entrepreneur}}checked{{/if}}>
+          <label class="form-check-label" for="gridRadios3">
+            創業家
+          </label>
+        </div>
+      </div>
+    </div>
+    {{!-- result --}}
+    <div class="row justify-content-start align-item-center" style="padding:100px">
+      <div class="col-2">
+        <button type="submit" class="btn btn-outline-dark ">產生幹話</button>
+      </div>
+      <div class="col-10">
+        <div class="d-block border border-dark result">
+          {{#if words}}
+          {{words}}
+          {{/if}}
+          <img class='slashes' src="https://upload.cc/i1/2019/11/07/2KEzhg.png">
+        </div>
+      </div>
+  </form>
+
+</div>
